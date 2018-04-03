@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.testng.eclipse.launchconfig">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/UnitedMR_MobileLite"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="BC4_AGENTNAME" value="autoadmin006,autoadmin007,autoadmin008,autoadmin009,autoadmin010,autoadmin011,autoadmin012,autoadmin013,autoadmin014,autoadmin015,autoadmin016,autoadmin017,autoadmin018,autoadmin019,autoadmin020,autoadmin021,autoadmin022,autoadmin023,autoadmin024,autoadmin025,autoadmin026,autoadmin027,autoadmin028,autoadmin029,autoadmin030,autoadmin031,autoadmin032,autoadmin033,autoadmin034,autoadmin035,autoadmin036,autoadmin037,autoadmin038,autoadmin039,autoadmin040,autoadmin041,autoadmin042,autoadmin043,autoadmin044,autoadmin045,autoadmin046,autoadmin047,autoadmin048,autoadmin049,autoadmin050,autoadmin051,autoadmin052,autoadmin053,autoadmin054,autoadmin055,autoadmin056,autoadmin057,autoadmin058"/>
+<mapEntry key="BC4_MEDICAIDAGENTNAME" value="automedicaid006,automedicaid007,automedicaid008,automedicaid009,automedicaid010,automedicaid011,automedicaid012,automedicaid013,automedicaid014,automedicaid015,automedicaid016,automedicaid017,automedicaid018,automedicaid019,automedicaid020,automedicaid021,automedicaid022,automedicaid023,automedicaid024,automedicaid025,automedicaid026,automedicaid027,automedicaid028,automedicaid029,automedicaid030,automedicaid031,automedicaid032,automedicaid033,automedicaid034,automedicaid035,automedicaid036,automedicaid037,automedicaid038,automedicaid039,automedicaid040,automedicaid041,automedicaid042,automedicaid043,automedicaid044,automedicaid045,automedicaid046,automedicaid047,automedicaid048,automedicaid049,automedicaid050,automedicaid051,automedicaid052,automedicaid053,automedicaid054,automedicaid055,automedicaid056,automedicaid057,automedicaid058"/>
+<mapEntry key="BC4_RETAILAGENTNAME" value="autoretail006,autoretail007,autoretail008,autoretail009,autoretail010,autoretail011,autoretail012,autoretail013,autoretail014,autoretail015,autoretail016,autoretail017,autoretail018,autoretail019,autoretail020,autoretail021,autoretail022,autoretail023,autoretail024,autoretail025,autoretail026,autoretail027,autoretail028,autoretail029,autoretail030,autoretail031,autoretail032,autoretail033,autoretail034,autoretail035,autoretail036,autoretail037,autoretail038,autoretail039,autoretail040,autoretail041,autoretail042,autoretail043,autoretail044,autoretail045,autoretail046,autoretail047,autoretail048,autoretail049,autoretail050,autoretail051,autoretail052,autoretail053,autoretail054,autoretail055,autoretail056,autoretail057,autoretail058"/>
+<mapEntry key="SPRING_PROFILES_BC4" value="qa"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.debug.ui.ATTR_CAPTURE_IN_FILE" value="${workspace_loc:/UnitedMR_MobileLite/test-output}/consoleOutput.txt"/>
+<stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.testng.remote.RemoteTestNG"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="UnitedMR_MobileLite"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value=""/>
+<mapAttribute key="org.testng.eclipse.ALL_CLASS_METHODS"/>
+<listAttribute key="org.testng.eclipse.CLASS_TEST_LIST"/>
+<booleanAttribute key="org.testng.eclipse.DEBUG" value="false"/>
+<listAttribute key="org.testng.eclipse.GROUP_LIST"/>
+<listAttribute key="org.testng.eclipse.GROUP_LIST_CLASS"/>
+<stringAttribute key="org.testng.eclipse.LOG_LEVEL" value="2"/>
+<listAttribute key="org.testng.eclipse.PACKAGE_TEST_LIST"/>
+<stringAttribute key="org.testng.eclipse.PROTOCOL" value="object"/>
+<listAttribute key="org.testng.eclipse.SUITE_TEST_LIST">
+<listEntry value="LaunchConfigs/SauceLabs/testngAllTests_sauce_withRetry.xml"/>
+</listAttribute>
+<intAttribute key="org.testng.eclipse.TYPE" value="3"/>
+<booleanAttribute key="org.testng.eclipse.VERBOSE" value="false"/>
+</launchConfiguration>

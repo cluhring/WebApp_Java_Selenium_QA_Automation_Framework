@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Mobile Lite Regression Tests Suite" parallel="methods" thread-count="2" configfailurepolicy="continue">
+	<parameter name="browser" value="firefox" />
+	<parameter name="retryCount" value="1"/>
+	<listeners>
+		<listener class-name="frameworkHelpers.RetryListener" />
+		<listener class-name="frameworkHelpers.TestListener" />
+	</listeners>
+	<test name="Mobile Lite Regression Tests" preserve-order="true">
+		<classes>
+			<!-- Mobile Lite Regression Tests -->
+			<class name="umrMobileLite_AgentApp.umrMobileLiteRegression.MobileLite_Login" />
+		</classes >
+	</test>
+</suite>

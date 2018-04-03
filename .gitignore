@@ -1,0 +1,12 @@
+# git should ignore these file/directories
+bin/
+target/
+test-output/
+*~
+/.metadata/
+/.classpath
+/.settings/
+/target/
+/bin/
+/bin
+.DS_Store

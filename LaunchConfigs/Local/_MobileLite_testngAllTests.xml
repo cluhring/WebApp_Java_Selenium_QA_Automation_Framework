@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Mobile Lite All Tests Suite" parallel="methods" thread-count="2" configfailurepolicy="continue">
+	<parameter name="browser" value="firefox" />
+	<parameter name="retryCount" value="1" />
+	<listeners>
+		<listener class-name="frameworkHelpers.RetryListener" />
+		<listener class-name="frameworkHelpers.TestListener" />
+	</listeners>
+
+	<test name="All Single Threaded Mobile Lite Tests" enabled="true" preserve-order="true" parallel="false" thread-count="1">
+		<!--
+		Some tests are sensitive to cross-talk, so any test involving actual chat communication should
+		be run single-threaded.  Similar for tests (mainly in Draft classes) that can
+		step on each other during contact modification and save
+		 -->
+		<parameter name="sauceLabExecution" value="false" />
+		<groups>
+			<run>
+				<include name="singleThread" />
+			</run>
+		</groups>
+		<classes>
+      <!-- MobileLite Regression Tests -->
+			<class name="umrMobileLite_AgentApp.umrMobileLiteRegression.MobileLite_Login" />
+			<!-- MobileLite Smoke Tests -->
+			<class name="umrMobileLite_AgentApp.umrMobileLiteSmoke.MobileLite_Login" />
+			<!-- MobileLite Other Tests -->
+		</classes>
+	</test>
+	<test name="All Other Mobile Lite Tests" enabled="true" parallel="methods">
+		<parameter name="sauceLabExecution" value="false" />
+		<groups>
+			<run>
+				<!--  Leave out any test flagged to be run single threaded -->
+				<exclude name="singleThread" />
+			</run>
+		</groups>
+
+		<classes>
+			<!-- MobileLite Regression Tests -->
+			<class name="umrMobileLite_AgentApp.umrMobileLiteRegression.MobileLite_Login" />
+			<!-- MobileLite Smoke Tests -->
+			<class name="umrMobileLite_AgentApp.umrMobileLiteSmoke.MobileLite_Login" />
+			<!-- MobileLite Other Tests -->
+		</classes>
+	</test>
+</suite>

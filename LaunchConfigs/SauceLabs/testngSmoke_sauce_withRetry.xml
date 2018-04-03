@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Mobile Lite Smoke Test Suite" parallel="methods" thread-count="4" configfailurepolicy="continue" >
+	<parameter name="browser" value="firefox" />
+	<parameter name="retryCount" value="1"/>
+	<!-- ******* In order to report pass/fail to sauce labs, the execution must
+	implement the SauceOnDemandTestListener *******  -->
+	<parameter name="sauceLabExecution" value="true" />
+	<listeners>
+		<listener class-name="com.saucelabs.testng.SauceOnDemandTestListener" />
+		<listener class-name="frameworkHelpers.RetryListener" />
+		<listener class-name="frameworkHelpers.TestListener" />
+	</listeners>
+	<test name="Mobile Lite SmokeTests" enabled="true" >
+		<classes>
+			<!-- Mobile Lite Smoke Tests -->
+			<class name="umrMobileLite_AgentApp.umrMobileLiteSmoke.MobileLite_Login" />
+		</classes >
+	</test>
+</suite>
