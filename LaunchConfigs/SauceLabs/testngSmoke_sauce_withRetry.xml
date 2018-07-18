@@ -3,7 +3,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Mobile Lite Smoke Test Suite" parallel="methods" thread-count="4" configfailurepolicy="continue" >
-	<parameter name="browser" value="firefox" />
+	<parameter name="browser" value="safari" />
 	<parameter name="retryCount" value="1"/>
 	<!-- ******* In order to report pass/fail to sauce labs, the execution must
 	implement the SauceOnDemandTestListener *******  -->

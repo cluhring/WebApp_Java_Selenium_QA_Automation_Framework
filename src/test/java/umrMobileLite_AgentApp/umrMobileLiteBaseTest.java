@@ -146,7 +146,6 @@ public abstract class umrMobileLiteBaseTest implements SauceOnDemandSessionIdPro
 
 		// Load element Map properties
 		elementMap = new java.util.Properties();
-		//InputStream in = getClass().getResourceAsStream("/umrMobileLite_ElementMap.properties");
 		InputStream in = getClass().getResourceAsStream("/umrMobileLite_ElementMap.properties");
 		try {
 			elementMap.load(in);
@@ -159,7 +158,6 @@ public abstract class umrMobileLiteBaseTest implements SauceOnDemandSessionIdPro
 		// Load profile properties
 		Properties bc4Properties = new java.util.Properties();
 		try {
-			//InputStream in2 = getClass().getResourceAsStream("/umrMobileLite.properties");
 			InputStream in2 = getClass().getResourceAsStream("/umrMobileLite.properties");
 			bc4Properties.load(in2);
 			in2.close();
@@ -333,12 +331,59 @@ public abstract class umrMobileLiteBaseTest implements SauceOnDemandSessionIdPro
 
 		sessionId.set(((RemoteWebDriver) getWebDriver()).getSessionId().toString());
 
-		//threadDriver.get().manage().window().maximize();
-		// Enforce 1024 x 768 browser size to match requirements.
-		threadDriver.get().manage().window().setSize(new Dimension(1280,800));
+		// TODO: SET Dimensions here
+		// threadDriver.get().manage().window().setSize(new Dimension(1280,800));
+		// "iPad", "iPad Air", "iPad Pro", "Microsoft Surface Pro 4", "Samsung Galaxy Tab S2", "Google Pixel"
+		// Device Cheat Sheet: http://screensiz.es
+		threadDriver.get().manage().window().setSize(getDimensions("iPad"));
 		threadDriver.get().manage().window().setPosition(new Point(0,0));
 		threadDriver.get().manage().deleteAllCookies();
 
+	}
+	
+	public Dimension getDimensions(String device) {
+		int width = 0;
+		int height = 0;
+		
+		switch (device) {
+		// Device Cheat Sheet: http://screensiz.es
+		case "iPhone 7": // Mini, 1st and 2nd Generation iPads
+			width = 500;
+			height = 750;
+			break;
+		case "iPad": // Mini, 1st and 2nd Generation iPads
+			width = 768;
+			height = 1024;
+			break;
+		case "iPad Air": //iPad Air - 1st and 2nd Generation  / Retina iPad - 3rd and 4th Generation  / iPad Mini - 2nd and 3rd Generation
+			width = 1536;
+			height = 2048;
+			break;
+		case "iPad Pro": //iPad 3, iPad4
+			width = 2048;
+			height = 2732;
+			break;
+		case "Microsoft Surface Pro 4": 
+			width = 1824;
+			height = 2736;
+			break;
+		case "Samsung Galaxy Tab S2":
+			width = 1536;
+			height = 2048;
+			break;
+		case "Google Pixel":
+			width = 1200;
+			height = 1600;
+			break;
+		default:
+			width = 1280;
+			height = 800;
+			//Assert.fail("FAIL - Invalid device type [" + device + "].");
+		}
+		
+		Dimension deviceDimensions = new Dimension(width, height);
+		
+		return deviceDimensions;
 	}
 
 	private RemoteWebDriver createWebDriverSauce(String browser, Method context) {
@@ -394,8 +439,7 @@ public abstract class umrMobileLiteBaseTest implements SauceOnDemandSessionIdPro
 			break;
 		case "safari":
 			capabilities = DesiredCapabilities.safari();
-			capabilities.setCapability(CapabilityType.PLATFORM, "OSX 10.8");
-			capabilities.setCapability("screenResolution", "1280x1024");
+			capabilities.setCapability(CapabilityType.PLATFORM, "OSX 10.11");
 			break;
 		default:
 			Assert.fail("FAIL - Invalid browser parameter passed");
@@ -406,7 +450,7 @@ public abstract class umrMobileLiteBaseTest implements SauceOnDemandSessionIdPro
 
 		// NOTE: Need to know what devices / resolutions we are testing
 		// 1280x1024 is more forgiving.
-		capabilities.setCapability("screenResolution", "1280x1024");
+		//capabilities.setCapability("screenResolution", "1280x1024");
 
 		RemoteWebDriver sauceDriver = null;
 		
@@ -614,7 +658,7 @@ public abstract class umrMobileLiteBaseTest implements SauceOnDemandSessionIdPro
 
 		case "safari":
 			return (RemoteWebDriver) new SafariDriver();
-
+			
 		default:
 			Assert.fail("FAIL - Invalid browser parameter passed");
 
